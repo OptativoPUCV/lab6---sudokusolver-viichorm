@@ -180,3 +180,13 @@ sudoku.c:178:30: error: invalid use of void expression
       |                              ^
 Compilation failed
 9e819e6
+Sun 19 May 2024 01:46:58 AM UTC: 
+ sudoku.c | 1 -
+ 1 file changed, 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘DFS’:
+sudoku.c:177:30: error: invalid use of void expression
+  177 |             Node* adj_node = (Node*)popFront(adj_nodes);
+      |                              ^
+Compilation failed
+0a67243
