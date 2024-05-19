@@ -160,23 +160,15 @@ Node* DFS(Node* initial, int* cont){
         (*cont)++;
 
         if (is_final(current)) {
-            while (!is_empty(s)) {
-                Node* node = (Node*)top(s);
-                pop(s);
-                free(node);
-            }
-
-            free(s);
             return current;
         }
 
         List* adj_nodes = get_adj_nodes(current);
         while (!is_empty(adj_nodes)) {
-    Node* adj_node = (Node*)top(adj_nodes);  
-    pop(adj_nodes);            
-    push(s, adj_node);
-    free(adj_node);
-}
+            Node* adj_node = (Node*)top(adj_nodes);  
+            pop(adj_nodes);            
+            push(s, adj_node);
+        }
 
         clean(adj_nodes);
         free(current);
@@ -186,7 +178,6 @@ Node* DFS(Node* initial, int* cont){
 
     return NULL;
 }
-
 
 
 
