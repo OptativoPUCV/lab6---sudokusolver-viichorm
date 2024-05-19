@@ -72,7 +72,7 @@ List* get_adj_nodes(Node* n){
    }
 
    
-    List* list=createList();
+    
     return list;
 }
 
