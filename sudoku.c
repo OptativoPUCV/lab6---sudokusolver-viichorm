@@ -43,7 +43,10 @@ void print_node(Node* n){
     printf("\n");
 }
 
+//ejercicio 2
+
 int is_valid(Node* n){
+   int i, j, k, l;
 
     return 1;
 }
