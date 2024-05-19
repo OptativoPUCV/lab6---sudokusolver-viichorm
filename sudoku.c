@@ -81,7 +81,7 @@ int is_valid(Node* n){
          int block[10] = {0};
          for (k = 0; k < 3; k++ ){
             for (l = 0; l < 3; l++){
-               int num = n->sudo[i + k][j + l]
+               int num = n->sudo[i + k][j + l];
                if (num != 0){
                   if (block[num] == 1){
                      return 0;
