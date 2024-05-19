@@ -60,6 +60,8 @@ int is_valid(Node* n){
       }
    }
 
+   // realmente se podia hacer con esa y daban los 20 puntos pero no se me ocurrio en el momento y hice las demas xd
+   
    for (j = 0; j < 9; j++){
       int col[10] = {0};
       for (i = 0; i < 9; i++){
