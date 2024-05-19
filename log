@@ -4,3 +4,16 @@ Sun 19 May 2024 12:49:19 AM UTC:
  tests:  0|5
 total_score: 0/70
 fed2a39
+Sun 19 May 2024 12:51:32 AM UTC: 
+ sudoku.c | 21 +++++++++++++++++++++
+ 1 file changed, 21 insertions(+)
+In file included from test.c:5:
+sudoku.c: In function ‘get_adj_nodes’:
+sudoku.c:75:11: error: redefinition of ‘list’
+   75 |     List* list=createList();
+      |           ^~~~
+sudoku.c:54:10: note: previous definition of ‘list’ with type ‘List *’
+   54 |    List* list = createList();
+      |          ^~~~
+Compilation failed
+91494d2
