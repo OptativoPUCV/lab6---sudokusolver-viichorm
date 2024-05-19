@@ -174,13 +174,19 @@ Node* DFS(Node* initial, int* cont){
 
          List* adj_nodes = get_adj_nodes(current);
          while (!is_empty(adj_nodes)) {
+            popFront(adj_nodes);
             Node* adj_node = (Node*)popFront(adj_nodes);
             push(s, adj_node);
             free(adj_node);
       }
 
+      clean(adj_nodes);
+      free(current);
+
       
    }
+
+   free(s);
    
   return NULL;
 }
