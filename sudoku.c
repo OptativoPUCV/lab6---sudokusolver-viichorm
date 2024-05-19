@@ -172,11 +172,11 @@ Node* DFS(Node* initial, int* cont){
 
         List* adj_nodes = get_adj_nodes(current);
         while (!is_empty(adj_nodes)) {
-            Node* adj_node = front(adj_nodes);  // Corrected variable name
-           pop(adj_node);
-            push(s, adj_node);
-            free(adj_node);
-        }
+    Node* adj_node = (Node*)top(adj_nodes);  
+    pop(adj_nodes);            
+    push(s, adj_node);
+    free(adj_node);
+}
 
         clean(adj_nodes);
         free(current);
