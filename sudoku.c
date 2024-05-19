@@ -147,7 +147,41 @@ int is_final(Node* n){
     return 1;
 }
 
+// ejercicio 5
+
 Node* DFS(Node* initial, int* cont){
+
+   Stack* s = createStack();
+   push(s, initial);
+   *cont = 0;
+
+   while (!is_empty(s)){
+      Node* current = (Node*)top(s);
+      pop(s);
+      cont++;
+
+      if (is_final(current)){
+         while (!is_empty(s)){
+            Node* node = (Node*)top(s);
+            pop(s);
+            free(node);
+         }
+
+         free(s);
+         return current;
+         
+      }
+
+         List* adj_nodes = get_adj_nodes(current);
+         while (!is_empty(adj_nodes)) {
+            Node* adj_node = (Node*)popFront(adj_nodes);
+            push(s, adj_node);
+            free(adj_node);
+      }
+
+      
+   }
+   
   return NULL;
 }
 
