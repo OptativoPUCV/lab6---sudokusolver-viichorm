@@ -99,6 +99,7 @@ int is_valid(Node* n){
 }
 
 //Ejercicio 1
+// vaya ejercicio 3 tambine xd
 
 List* get_adj_nodes(Node* n){
    List* list = createList();
