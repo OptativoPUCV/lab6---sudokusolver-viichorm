@@ -75,7 +75,7 @@ int is_valid(Node* n){
 
    int k, l;
 
-   for (int = 0; i < 9; i += 3){
+   for (i = 0; i < 9; i += 3){
 
       for (j = 0; j < 9; j+= 3){
          int block[10] = {0};

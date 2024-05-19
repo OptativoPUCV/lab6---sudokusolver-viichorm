@@ -95,3 +95,20 @@ sudoku.c:81:14: error: unused variable ‘block’ [-Werror=unused-variable]
 cc1: all warnings being treated as errors
 Compilation failed
 dc8ce76
+Sun 19 May 2024 01:01:43 AM UTC: 
+ sudoku.c | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+In file included from test.c:5:
+sudoku.c: In function ‘is_valid’:
+sudoku.c:85:16: error: expected ‘,’ or ‘;’ before ‘if’
+   85 |                if (num != 0){
+      |                ^~
+sudoku.c:84:20: error: unused variable ‘num’ [-Werror=unused-variable]
+   84 |                int num = n->sudo[i + k][j + l]
+      |                    ^~~
+sudoku.c:81:14: error: unused variable ‘block’ [-Werror=unused-variable]
+   81 |          int block[10] = {0};
+      |              ^~~~~
+cc1: all warnings being treated as errors
+Compilation failed
+358be0c
