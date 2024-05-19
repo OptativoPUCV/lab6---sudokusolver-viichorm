@@ -150,44 +150,42 @@ int is_final(Node* n){
 // ejercicio 5
 
 Node* DFS(Node* initial, int* cont){
+    Stack* s = createStack();
+    push(s, initial);
+    *cont = 0;
 
-   Stack* s = createStack();
-   push(s, initial);
-   *cont = 0;
+    while (!is_empty(s)) {
+        Node* current = (Node*)top(s);
+        pop(s);
+        (*cont)++;
 
-   while (!is_empty(s)){
-      Node* current = (Node*)top(s);
-      pop(s);
-      cont++;
+        if (is_final(current)) {
+            while (!is_empty(s)) {
+                Node* node = (Node*)top(s);
+                pop(s);
+                free(node);
+            }
 
-      if (is_final(current)){
-         while (!is_empty(s)){
-            Node* node = (Node*)top(s);
-            pop(s);
-            free(node);
-         }
+            free(s);
+            return current;
+        }
 
-         free(s);
-         return current;
-         
-      }
-
-         List* adj_nodes = get_adj_nodes(current);
-         while (!is_empty(adj_nodes)) {
-            Node* adj_node = (Node*)popFront(adj_nodes);
+        List* adj_nodes = get_adj_nodes(current);
+        while (!is_empty(adj_nodes)) {
+            Node* adj_node = front(adj_nodes);  // Corrected variable name
+           pop(adj_node);
             push(s, adj_node);
             free(adj_node);
-      }
+        }
 
-      clean(adj_nodes);
-      free(current);
+        clean(adj_nodes);
+        free(current);
+    }
 
-      
-   }
+    free(s);
 
-   free(s);
-   
-  return NULL;
+    return NULL;
+}
 }
 
 
