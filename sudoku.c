@@ -46,7 +46,7 @@ void print_node(Node* n){
 //ejercicio 2
 
 int is_valid(Node* n){
-   int i, j, k, l;
+   int i, j;
    for(i=0; i<9; i++){
       int row[10] = {0};
       for (j = 0; j < 9; j++){
